@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  target_reps: 1
+  achieved_reps: 1
+  weight: 1.5
+  rest_period_seconds: 1
+
+two:
+  target_reps: 1
+  achieved_reps: 1
+  weight: 1.5
+  rest_period_seconds: 1
