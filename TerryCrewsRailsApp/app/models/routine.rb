@@ -1,3 +1,7 @@
 class Routine < ActiveRecord::Base
-	has_many :exercises
+  belongs_to :user
+  belongs_to :workout
+
+  has_many :exercise_sets
+
 end

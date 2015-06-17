@@ -1,3 +1,4 @@
 class Exercise < ActiveRecord::Base
-	has_many :exercise_sets
+  belongs_to :user
+  belongs_to :exercise_set
 end

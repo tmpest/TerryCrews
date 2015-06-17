@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529045337) do
+ActiveRecord::Schema.define(version: 20150617052748) do
 
   create_table "exercise_sets", force: :cascade do |t|
     t.integer  "target_reps"
@@ -20,33 +20,56 @@ ActiveRecord::Schema.define(version: 20150529045337) do
     t.integer  "rest_period_seconds"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "user_id"
+    t.integer  "routine_id"
+    t.integer  "workout_id"
   end
+
+  add_index "exercise_sets", ["routine_id"], name: "index_exercise_sets_on_routine_id"
+  add_index "exercise_sets", ["user_id"], name: "index_exercise_sets_on_user_id"
+  add_index "exercise_sets", ["workout_id"], name: "index_exercise_sets_on_workout_id"
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.boolean  "is_resistance"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+    t.integer  "exercise_set_id"
   end
+
+  add_index "exercises", ["exercise_set_id"], name: "index_exercises_on_exercise_set_id"
+  add_index "exercises", ["user_id"], name: "index_exercises_on_user_id"
 
   create_table "preferences", force: :cascade do |t|
     t.string   "unit_preference"
     t.boolean  "is_public"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "user_id"
   end
+
+  add_index "preferences", ["user_id"], name: "index_preferences_on_user_id"
 
   create_table "routines", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "workout_id"
   end
+
+  add_index "routines", ["user_id"], name: "index_routines_on_user_id"
+  add_index "routines", ["workout_id"], name: "index_routines_on_workout_id"
 
   create_table "user_weights", force: :cascade do |t|
     t.float    "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "user_weights", ["user_id"], name: "index_user_weights_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
@@ -66,6 +89,9 @@ ActiveRecord::Schema.define(version: 20150529045337) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "workouts", ["user_id"], name: "index_workouts_on_user_id"
 
 end

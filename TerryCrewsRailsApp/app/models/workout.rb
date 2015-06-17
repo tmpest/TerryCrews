@@ -1,4 +1,6 @@
 class Workout < ActiveRecord::Base
-	has_many :routines
-	has_many :exercises
+  belongs_to :user
+
+  has_many :routines
+  has_many :exercise_sets
 end
