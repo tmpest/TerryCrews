@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friendships
   resources :users
   resources :preferences
   resources :user_weights
