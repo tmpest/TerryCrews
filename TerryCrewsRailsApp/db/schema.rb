@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150621173901) do
     t.integer  "user_id"
     t.integer  "routine_id"
     t.integer  "workout_id"
-    t.string   "name"
   end
 
   add_index "exercise_sets", ["routine_id"], name: "index_exercise_sets_on_routine_id"

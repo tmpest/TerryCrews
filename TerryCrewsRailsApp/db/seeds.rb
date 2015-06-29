@@ -26,17 +26,17 @@ UserWeight.new( {weight: 215.0,
 Exercise.new( {name: "Bicep Curls",
                is_resistance: true,
                user_id: 1,
-               exercise_set_id: } ).save
+               exercise_set_id: 1} ).save
 
 Exercise.new( {name: "Tricep Push Downs",
                is_resistance: true,
                user_id: 1,
-               exercise_set_id: } ).save
+               exercise_set_id: 2} ).save
 
 Exercise.new( {name: "Bench Press",
                is_resistance: true,
                user_id: 1,
-               exercise_set_id: } ).save
+               exercise_set_id: 3} ).save
 
 Exercise.new( {name: "Deadlift",
                is_resistance: true,
@@ -93,4 +93,9 @@ Exercise.new( {name: "Sit-ups",
                user_id: 2,
                exercise_set_id: } ).save
 
-ExerciseSet.new( {})
+ExerciseSet.new( {target_reps:,
+                  achieved_reps:,
+                  weight:,
+                  rest_period_seconds:,
+                  routine_id: } ).save
+                     })
