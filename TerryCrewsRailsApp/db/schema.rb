@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621173901) do
+ActiveRecord::Schema.define(version: 20150629000610) do
 
   create_table "exercise_sets", force: :cascade do |t|
     t.integer  "target_reps"
@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 20150621173901) do
     t.integer  "routine_id"
     t.integer  "workout_id"
     t.string   "name"
+    t.integer  "exercise_id"
   end
 
+  add_index "exercise_sets", ["exercise_id"], name: "index_exercise_sets_on_exercise_id"
   add_index "exercise_sets", ["routine_id"], name: "index_exercise_sets_on_routine_id"
   add_index "exercise_sets", ["user_id"], name: "index_exercise_sets_on_user_id"
   add_index "exercise_sets", ["workout_id"], name: "index_exercise_sets_on_workout_id"
@@ -33,13 +35,11 @@ ActiveRecord::Schema.define(version: 20150621173901) do
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.boolean  "is_resistance"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "user_id"
-    t.integer  "exercise_set_id"
   end
 
-  add_index "exercises", ["exercise_set_id"], name: "index_exercises_on_exercise_set_id"
   add_index "exercises", ["user_id"], name: "index_exercises_on_user_id"
 
   create_table "friendships", force: :cascade do |t|
