@@ -11,23 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619224218) do
-
-  create_table "exercise_sets", force: :cascade do |t|
-    t.integer  "target_reps"
-    t.integer  "achieved_reps"
-    t.float    "weight"
-    t.integer  "rest_period_seconds"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.integer  "user_id"
-    t.integer  "routine_id"
-    t.integer  "workout_id"
-  end
-
-  add_index "exercise_sets", ["routine_id"], name: "index_exercise_sets_on_routine_id"
-  add_index "exercise_sets", ["user_id"], name: "index_exercise_sets_on_user_id"
-  add_index "exercise_sets", ["workout_id"], name: "index_exercise_sets_on_workout_id"
+ActiveRecord::Schema.define(version: 20150926161907) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
@@ -70,6 +54,22 @@ ActiveRecord::Schema.define(version: 20150619224218) do
 
   add_index "routines", ["user_id"], name: "index_routines_on_user_id"
   add_index "routines", ["workout_id"], name: "index_routines_on_workout_id"
+
+  create_table "set_data", force: :cascade do |t|
+    t.integer  "target_reps"
+    t.integer  "achieved_reps"
+    t.float    "weight"
+    t.integer  "rest_period_seconds"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "user_id"
+    t.integer  "routine_id"
+    t.integer  "workout_id"
+  end
+
+  add_index "set_data", ["routine_id"], name: "index_set_data_on_routine_id"
+  add_index "set_data", ["user_id"], name: "index_set_data_on_user_id"
+  add_index "set_data", ["workout_id"], name: "index_set_data_on_workout_id"
 
   create_table "user_weights", force: :cascade do |t|
     t.float    "weight"
