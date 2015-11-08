@@ -16,25 +16,25 @@
     <%= f.text_field :user_name %>
   </div>
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.label :password_digest %><br>
+    <%= f.text_field :password_digest %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.datetime_select( "birthday", order: [:year, :month, :day], :start_year => 1900, :end_year => Date.current.year, :discard_hour => true )%>
+    <%= f.label :birthdate %><br>
+    <%= f.text_field :birthdate %>
   </div>
   <div class="field">
-    <%= f.label :password %><br>
+    <%= f.label :unit_preference %><br>
+    <%= f.text_field :unit_preference %>
   </div>
-    <%= password_field_tag(:password) %>
   <div class="actions">
     <%= f.submit %>
   </div>

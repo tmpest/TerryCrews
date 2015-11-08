@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
+  <strong>Surname:</strong>
+  <%= @user.surname %>
 </p>
 
 <p>
@@ -21,13 +21,13 @@
 </p>
 
 <p>
-  <strong>Birthday:</strong>
-  <%= @user.birthday %>
+  <strong>Birthdate:</strong>
+  <%= @user.birthdate %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong>Unit preference:</strong>
+  <%= @user.unit_preference %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

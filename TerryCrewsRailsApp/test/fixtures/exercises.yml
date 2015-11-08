@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  is_resistance: false
+  name: 
+  sets_count: 
+  rep_goal: 
+  rep_results: 
 
 two:
-  name: MyString
-  is_resistance: false
+  name: 
+  sets_count: 
+  rep_goal: 
+  rep_results: 

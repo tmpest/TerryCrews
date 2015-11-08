@@ -6,7 +6,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Is resistance</th>
+      <th>Sets count</th>
+      <th>Rep goal</th>
+      <th>Rep results</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +17,9 @@
     <% @exercises.each do |exercise| %>
       <tr>
         <td><%= exercise.name %></td>
-        <td><%= exercise.is_resistance %></td>
+        <td><%= exercise.sets_count %></td>
+        <td><%= exercise.rep_goal %></td>
+        <td><%= exercise.rep_results %></td>
         <td><%= link_to 'Show', exercise %></td>
         <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
         <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
